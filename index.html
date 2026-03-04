@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uncoated.us - Coming Soon</title>
+
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -26,7 +26,7 @@
       padding: 20px;
     }
 
-    /* Top Branding */
+    /* Top Bar */
     .top-bar {
       position: absolute;
       top: 20px;
@@ -34,35 +34,35 @@
       right: 20px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      width: calc(100% - 40px);
     }
 
     .logo-left {
-      font-family: Verdana, sans-serif;
+      font-family: Verdana;
       font-weight: bold;
       font-style: italic;
-      font-size: 1.2rem;
       color: white;
     }
 
     .logo-right {
       font-family: "Times New Roman", serif;
-      font-size: 1.2rem;
       color: white;
     }
 
-    /* Main Text */
+    /* Podcast Logo Image */
+    .main-logo {
+      width: 320px;
+      max-width: 80%;
+      margin-bottom: 25px;
+    }
+
     h1 {
-      font-family: Verdana, sans-serif; /* regular font */
       font-weight: normal;
       font-size: 3rem;
       margin-bottom: 20px;
-      color: #FFFFFF; /* Changed to white */
+      color: #FFFFFF;
     }
 
     p {
-      font-family: Verdana, sans-serif;
       font-size: 1.2rem;
       margin-bottom: 40px;
       color: #E0E0E0;
@@ -70,42 +70,32 @@
 
     /* Glass Button */
     .btn {
-      display: inline-block;
       padding: 15px 30px;
       font-size: 1rem;
       font-weight: bold;
       text-decoration: none;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.15);
-      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
       border-radius: 12px;
       backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
     }
 
     .btn:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255,255,255,0.25);
       transform: scale(1.05);
     }
 
-    /* Footer */
     footer {
       position: absolute;
       bottom: 15px;
       font-size: 0.85rem;
       color: #B0B0B0;
     }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
   </style>
 </head>
+
 <body>
 
   <div class="top-bar">
@@ -113,13 +103,23 @@
     <div class="logo-right">MNSO</div>
   </div>
 
+  <!-- YOUR TRANSPARENT PNG LOGO -->
+  <img 
+    src="02AA3B0A-36FE-43F1-8F75-1221B4EDCCB2.png" 
+    alt="Uncoated.us Logo"
+    class="main-logo"
+  >
+
   <h1>Stay Tuned</h1>
   <p>UNCOATED.US Podcast Coming Soon</p>
-  <a href="https://www.mnso.live" class="btn" target="_blank">Visit MNSO</a>
+
+  <a href="https://www.mnso.live" class="btn" target="_blank">
+    Visit MNSO
+  </a>
 
   <footer>
     &copy; 2026 Uncoated.us | Powered by MNSO
   </footer>
-  
+
 </body>
 </html>
