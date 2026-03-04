@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      background: linear-gradient(135deg, #0B1F3F, #1A3A6F);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* Top Branding */
+    .top-bar {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 40px);
+    }
+
+    .logo-left {
+      font-family: Verdana, sans-serif;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .logo-right {
+      font-family: "Times New Roman", serif;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    /* Main 404 Text */
+    h1 {
+      font-family: Verdana, sans-serif;
+      font-weight: bold;
+      font-size: 4rem;
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-family: Verdana, sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      color: #E0E0E0;
+    }
+
+    /* Glass Button */
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.85rem;
+      color: #B0B0B0;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="logo-left">UNCOATED.US</div>
+    <div class="logo-right">MNSO</div>
+  </div>
+
+  <h1>404</h1>
+  <p>Oops! Page not found.</p>
+  <a href="https://www.mnso.live" class="btn" target="_blank">Go to MNSO Homepage</a>
+
+  <footer>
+    &copy; 2026 Uncoated.us | Powered by MNSO
+  </footer>
+</body>
+</html>
