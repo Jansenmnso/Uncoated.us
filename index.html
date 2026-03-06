@@ -1,125 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uncoated.us - Coming Soon</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      font-family: Verdana, sans-serif;
-      background: linear-gradient(135deg, #0B1F3F, #1A3A6F);
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      padding: 20px;
-    }
+<title>Uncoated.us</title>
 
-    /* Top Bar */
-    .top-bar {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      display: flex;
-      justify-content: space-between;
-    }
+<style>
 
-    .logo-left {
-      font-family: Verdana;
-      font-weight: bold;
-      font-style: italic;
-      color: white;
-    }
+/* GLOBAL */
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:#0b0b0f;
+  color:white;
+  overflow-x:hidden;
+}
 
-    .logo-right {
-      font-family: "Times New Roman", serif;
-      color: white;
-    }
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 28px;
+  background:linear-gradient(
+    180deg,
+    rgba(80,80,90,0.92),
+    rgba(45,45,55,0.88)
+  );
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 4px 25px rgba(0,0,0,0.7),
+    0 0 20px rgba(58,120,255,0.15);
+  z-index:1000;
+}
 
-    /* Podcast Logo Image */
-    .main-logo {
-      width: 320px;
-      max-width: 80%;
-      margin-bottom: 25px;
-    }
+/* BLUE GLOW LINE */
+header::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #3A78FF,
+    transparent
+  );
+}
 
-    h1 {
-      font-weight: normal;
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #FFFFFF;
-    }
+/* MENU BUTTON */
+.menu-btn{
+  font-size:36px;
+  cursor:pointer;
+}
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      color: #E0E0E0;
-    }
+/* LOGO */
+.header-logo{
+  height:140px;
+  max-width:none;
+  object-fit:contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.6));
+}
 
-    /* Glass Button */
-    .btn {
-      padding: 15px 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-      background: rgba(255,255,255,0.15);
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s ease;
-    }
+/* SIDE MENU */
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-280px;
+  width:280px;
+  height:100%;
+  background:rgba(20,20,25,0.92);
+  backdrop-filter:blur(22px);
+  padding-top:140px;
+  transition:0.35s ease;
+  z-index:999;
+}
 
-    .btn:hover {
-      background: rgba(255,255,255,0.25);
-      transform: scale(1.05);
-    }
+.side-menu a{
+  display:block;
+  padding:18px 32px;
+  font-size:17px;
+  color:#d7d7d7;
+  border-left:3px solid transparent;
+  text-decoration:none;
+}
 
-    footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 0.85rem;
-      color: #B0B0B0;
-    }
-  </style>
+.side-menu a:hover{
+  background:rgba(255,255,255,0.05);
+  border-left:3px solid #3A78FF;
+}
+
+/* MAIN */
+main{
+  padding-top:150px;
+}
+
+/* FEATURED VIDEO */
+.featured-container{
+  width:92%;
+  max-width:950px;
+  margin:auto;
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.7),
+    0 0 25px rgba(58,120,255,0.18);
+}
+
+.featured-video{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  display:block;
+}
+
+/* SECTION */
+.section{
+  margin-top:40px;
+  padding-left:20px;
+}
+
+.section h2{
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+/* SCROLL ROW */
+.scroll-wrapper{
+  position:relative;
+}
+
+.scroll-row{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding-bottom:10px;
+  scrollbar-width:none;
+}
+
+.scroll-row::-webkit-scrollbar{
+  display:none;
+}
+
+/* EPISODE CARDS */
+.card{
+  min-width:200px;
+  height:120px;
+  border-radius:14px;
+  overflow:hidden;
+  background:#181818;
+  cursor:pointer;
+  transition:transform .2s ease;
+}
+
+.card:hover{
+  transform:scale(1.06);
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator{
+  width:92%;
+  height:3px;
+  background:rgba(255,255,255,0.1);
+  margin:8px auto 0;
+  border-radius:3px;
+  position:relative;
+}
+
+.scroll-indicator-bar{
+  height:3px;
+  width:40px;
+  background:#3A78FF;
+  border-radius:3px;
+  position:absolute;
+}
+
+/* FOOTER */
+footer{
+  margin-top:50px;
+  padding:30px;
+  text-align:center;
+  font-size:13px;
+  color:#777;
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <div class="top-bar">
-    <div class="logo-left">UNCOATED.US</div>
-    <div class="logo-right">MNSO</div>
+<!-- SIDE MENU -->
+<div id="menu" class="side-menu">
+  <a href="/library">Spotify Library</a>
+  <a href="/library">YouTube Library</a>
+  <a href="mailto:admin@mnso.live">Contact Us</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <img src="02AA3B0A-36FE-43F1-8F75-1221B4EDCCB2.png" class="header-logo">
+</header>
+
+<!-- MAIN -->
+<main>
+
+<a href="/library">
+  <div class="featured-container">
+
+    <video 
+      class="featured-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      id="highlightVideo">
+
+      <source src="copy_6377A28D-FCC7-4B03-B554-63FD230B7938.mov" type="video/quicktime">
+      <source src="highlight.mp4" type="video/mp4">
+
+    </video>
+
   </div>
+</a>
 
-  <!-- YOUR TRANSPARENT PNG LOGO -->
-  <img 
-    src="02AA3B0A-36FE-43F1-8F75-1221B4EDCCB2.png" 
-    alt="Uncoated.us Logo"
-    class="main-logo"
-  >
+<div class="section">
+  <h2>Latest Episodes</h2>
 
-  <h1>Stay Tuned</h1>
-  <p>UNCOATED.US Podcast Coming Soon</p>
+  <div class="scroll-wrapper">
+    <div id="scrollRow" class="scroll-row">
 
-  <a href="https://www.mnso.live" class="btn" target="_blank">
-    Visit MNSO
-  </a>
+      <a href="/library" class="card"><img src="IMG_4250.jpeg"></a>
+      <a href="/library" class="card"><img src="IMG_4250.jpeg"></a>
+      <a href="/library" class="card"><img src="IMG_4250.jpeg"></a>
+      <a href="/library" class="card"><img src="IMG_4250.jpeg"></a>
+      <a href="/library" class="card"><img src="IMG_4250.jpeg"></a>
 
-  <footer>
-    &copy; 2026 Uncoated.us | Powered by MNSO
-  </footer>
+    </div>
+
+    <div class="scroll-indicator">
+      <div id="scrollBar" class="scroll-indicator-bar"></div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer>
+  Uncoated.us Podcast
+</footer>
+
+<script>
+
+function toggleMenu(){
+  let menu=document.getElementById("menu");
+  if(menu.style.left==="0px"){
+    menu.style.left="-280px";
+  }else{
+    menu.style.left="0";
+  }
+}
+
+/* KEEP VIDEO PLAYING */
+const video = document.getElementById("highlightVideo");
+
+video.addEventListener("ended", () => {
+  video.currentTime = 0;
+  video.play();
+});
+
+/* SCROLL BAR */
+const row=document.getElementById("scrollRow");
+const bar=document.getElementById("scrollBar");
+
+row.addEventListener("scroll",()=>{
+
+  const maxScroll=row.scrollWidth-row.clientWidth;
+  const percent=row.scrollLeft/maxScroll;
+
+  const track=document.querySelector(".scroll-indicator").clientWidth;
+
+  const indicatorWidth=row.clientWidth/row.scrollWidth;
+
+  bar.style.width=(track*indicatorWidth)+"px";
+
+  bar.style.left=(percent*(track-bar.clientWidth))+"px";
+
+});
+
+</script>
 
 </body>
 </html>
